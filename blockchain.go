@@ -3,9 +3,7 @@ package main
 import (
 	"bytes"
 	"crypto/sha256"
-	"encoding/binary"
 	"fmt"
-	"log"
 	"math"
 	"math/big"
 	"strconv"
@@ -136,15 +134,15 @@ func (pow *ProofOfWork) Validate() bool {
 }
 
 // IntToHex converts an int64 to a byte array
-func IntToHex(num int64) []byte {
-	buff := new(bytes.Buffer)
-	err := binary.Write(buff, binary.BigEndian, num)
-	if err != nil {
-		log.Panic(err)
-	}
+// func IntToHex(num int64) []byte {
+// 	buff := new(bytes.Buffer)
+// 	err := binary.Write(buff, binary.BigEndian, num)
+// 	if err != nil {
+// 		log.Panic(err)
+// 	}
 
-	return buff.Bytes()
-}
+// 	return buff.Bytes()
+// }
 
 //Main - doit
 func main() {
